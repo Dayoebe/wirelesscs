@@ -1,0 +1,39 @@
+<article class="bg-white flex flex-col shadow my-4 hover:bg-blue-100 hover:border">
+    <!-- Article Image -->
+    <a href="{{route('view', $post)}}" class="hover:opacity-75">
+        <img src="{{$post->getThumbnail()}}" alt="{{$post->title}}" class="aspect-[4/3] object-contain">
+    </a>
+    <div class="bg-white flex flex-col justify-start p-6">
+        <div class="flex gap-4">
+            @foreach($post->categories as $category)
+                <a href={{route('by-category', $category)}} class="hover:uppercase hover:text-yellow-500 text-blue-700 text-sm font-bold uppercase pb-4">
+                    {{$category->title}}
+                </a>
+            @endforeach
+        </div>
+        <h1><a href="{{route('view', $post)}}" class="hover:uppercase text-3xl font-bold hover:text-indigo-600 pb-4">
+            {{$post->title}}
+        </a> </h1>
+        @if ($showAuthor)
+            <p href="{{ route('profile', $post->user->id) }}" class="hover:uppercase text-sm pb-3 hover:text-red-500">
+                By <a href="{{ route('dayo') }}" class="font-semibold hover:text-yellow-500">{{$post->user->name}}</a>, Published on
+                {{$post->getFormattedDate()}} | {{ $post->human_read_time }}
+            </p>
+        @endif
+        <a href="{{route('view', $post)}}" class="pb-6">
+            {{$post->shortBody()}}
+        </a>
+        <a  href="{{route('view', $post)}}" class="uppercase text-gray-800 hover:text-black">Continue Reading <i
+                class="fas fa-arrow-right hover:text-red-500"></i></a>
+    </div>
+</article>
+
+
+
+{{--
+@if ($showAuthor)
+            <p href="{{ route('profile', $post->user->id) }}" class="hover:uppercase text-sm pb-3 hover:text-red-500">
+                By <a href="{{ route('profile', $post->user->id) }}" class="font-semibold hover:text-yellow-500">{{$post->user->name}}</a>, Published on
+                {{$post->getFormattedDate()}} | {{ $post->human_read_time }}
+            </p>
+        @endif --}}

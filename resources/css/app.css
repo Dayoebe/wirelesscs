@@ -1,0 +1,30 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+.font-family-karla {
+    font-family: karla;
+}
+
+pre {
+    padding: 1rem;
+    background-color: #1a202c;
+    color: white;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: xx-large;
+}
+h3 {
+    font-size: x-large;
+    margin-top: auto;
+    padding: 1ex;
+}
+.mb-3  li {
+    padding-top: 1ex;
+    padding-bottom: 1ex;
+
+}
