@@ -1,0 +1,626 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://www.debian.org/download
+Subject: Debian -- Thank you for downloading Debian!
+Date: Wed, 19 Jul 2023 00:01:17 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--rKCYPeIa47275kefW82arMLdiyOZ3J0euPYZorWLaI----"
+
+
+------MultipartBoundary--rKCYPeIa47275kefW82arMLdiyOZ3J0euPYZorWLaI----
+Content-Type: text/html
+Content-ID: <frame-BF2C8509E83B08E0F3E2C413BF246688@mhtml.blink>
+Content-Transfer-Encoding: binary
+Content-Location: https://www.debian.org/download
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Debian -- Thank you for downloading Debian! </title>
+  <link rel="author" href="mailto:webmaster@debian.org">
+  <meta name="Generator" content="WML 2.32.0">
+  <meta name="Modified" content="2023-06-10 22:21:52">
+  <meta name="viewport" content="width=device-width">
+  <meta name="mobileoptimized" content="300">
+  <meta name="HandheldFriendly" content="true">
+<link href="https://www.debian.org/debian.css" rel="stylesheet" type="text/css">
+  <link href="https://www.debian.org/debian-en.css" rel="stylesheet" type="text/css" media="all">
+<link rel="search" type="application/opensearchdescription+xml" title="Debian website search" href="https://www.debian.org/search.en.xml">
+</head>
+<body>
+<div id="header">
+  <div id="upperheader">
+    <div id="logo">
+    <a href="https://www.debian.org/" title="Debian Home"><img src="https://www.debian.org/Pics/openlogo-50.png" alt="Debian" width="50" height="61"></a>
+    </div> <!-- end logo -->
+    <div id="searchbox">
+      <form name="p" method="get" action="https://search.debian.org/cgi-bin/omega">
+      <p>
+
+        <input name="P" value="" size="14">
+        <input type="submit" value="Search">
+      </p>
+      </form>
+    </div>   <!-- end sitetools -->
+  </div> <!-- end upperheader -->
+  <!--UdmComment-->
+  <div id="navbar">
+    <p class="hidecss"><a href="https://www.debian.org/download#content">Skip Quicknav</a></p>
+    <ul>
+      <!-- Link to Debian's own Social Media resources -->
+      <li><a href="https://bits.debian.org/" title="Bits from Debian">Blog</a></li>
+      <li><a href="https://micronews.debian.org/" title="Micronews from Debian">Micronews</a></li>
+      <li><a href="https://planet.debian.org/" title="The Planet of Debian">Planet</a></li>
+    </ul>
+  </div> <!-- end navbar -->
+<p id="breadcrumbs">
+Thank you for downloading Debian!</p>
+</div> <!-- end header -->
+<!--/UdmComment-->
+<div id="content">
+<h1>Thank you for downloading Debian!</h1>
+<p>This is Debian 12, codenamed <em>bookworm</em>, netinst, for 64-bit PC (amd64)
+<a href="https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.0.0-amd64-netinst.iso">debian-12.0.0-amd64-netinst.iso</a>.</p>
+<p>Download checksum: <a href="https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/SHA512SUMS">SHA512SUMS</a> <a href="https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/SHA512SUMS.sign">Signature</a></p>
+<div class="tip">
+	<p><strong>Important</strong>: Make sure to <a href="https://www.debian.org/CD/verify">verify your download with the checksum</a>.</p>
+</div>
+<p>Debian installer ISOs are hybrid images, which means they can be written directly to CD/DVD/BD media OR to <a href="https://www.debian.org/CD/faq/#write-usb">USB sticks</a>.</p>
+<h2 id="h2-1">
+	Other Installers</h2>
+<p>Other installers and images, such as live systems, offline installers for systems without a network connection, installers for other CPU architectures, or cloud instances, can be found at <a href="https://www.debian.org/distrib/">Getting Debian</a>.</p>
+<h2 id="h2-2">Related Links</h2>
+<p><a href="https://www.debian.org/releases/bookworm/installmanual">Installation Guide</a></p>
+<p><a href="https://www.debian.org/releases/bookworm/releasenotes">Release Notes</a></p>
+<p><a href="https://www.debian.org/CD/verify">ISO Verification Guide</a></p>
+<p><a href="https://www.debian.org/CD/http-ftp/#mirrors">Alternate Download Sites</a></p>
+<p><a href="https://www.debian.org/releases">Other Releases</a></p>
+<div class="clr"></div>
+</div> <!-- end content -->
+<div id="footer">
+<hr class="hidecss">
+<p>Back to the <a href="https://www.debian.org/">Debian Project homepage</a>.</p>
+<hr>
+<!--UdmComment-->
+<div id="pageLang">
+<div id="langSelector">
+This page is also available in the following languages:
+<div id="langContainer">
+ <a href="https://www.debian.org/download.ar.html" title="Arabic" hreflang="ar" lang="ar" rel="alternate">Ø¹Ø±Ø¨ÙŠØ©&nbsp;(Arabiya)</a>
+ <a href="https://www.debian.org/download.de.html" title="German" hreflang="de" lang="de" rel="alternate">Deutsch</a>
+ <a href="https://www.debian.org/download.el.html" title="Greek" hreflang="el" lang="el" rel="alternate">Î•Î»Î»Î·Î½Î¹ÎºÎ¬&nbsp;(Ellinika)</a>
+ <a href="https://www.debian.org/download.es.html" title="Spanish" hreflang="es" lang="es" rel="alternate">espaÃ±ol</a>
+ <a href="https://www.debian.org/download.fa.html" title="Persian" hreflang="fa" lang="fa" rel="alternate">ÙØ§Ø±Ø³ÛŒ&nbsp;(Farsi)</a>
+ <a href="https://www.debian.org/download.fr.html" title="French" hreflang="fr" lang="fr" rel="alternate">franÃ§ais</a>
+ <a href="https://www.debian.org/download.it.html" title="Italian" hreflang="it" lang="it" rel="alternate">Italiano</a>
+ <a href="https://www.debian.org/download.ko.html" title="Korean" hreflang="ko" lang="ko" rel="alternate">í•œêµ­ì–´&nbsp;(Korean)</a>
+ <a href="https://www.debian.org/download.nl.html" title="Dutch" hreflang="nl" lang="nl" rel="alternate">Nederlands</a>
+ <a href="https://www.debian.org/download.nb.html" title="Norwegian" hreflang="nb" lang="nb" rel="alternate">norsk&nbsp;(bokmÃ¥l)</a>
+ <a href="https://www.debian.org/download.pl.html" title="Polish" hreflang="pl" lang="pl" rel="alternate">polski</a>
+ <a href="https://www.debian.org/download.pt.html" title="Portuguese" hreflang="pt" lang="pt" rel="alternate">PortuguÃªs</a>
+ <a href="https://www.debian.org/download.ru.html" title="Russian" hreflang="ru" lang="ru" rel="alternate">Ğ ÑƒÑÑĞºĞ¸Ğ¹&nbsp;(Russkij)</a>
+ <a href="https://www.debian.org/download.sv.html" title="Swedish" hreflang="sv" lang="sv" rel="alternate">svenska</a>
+ <a href="https://www.debian.org/download.uk.html" title="Ukrainian" hreflang="uk" lang="uk" rel="alternate">ÑƒĞºÑ€Ğ°Ñ—Ğ½ÑÑŒĞºĞ°&nbsp;(ukrajins'ka)</a>
+ <a href="https://www.debian.org/download.zh-cn.html" title="Chinese (China)" hreflang="zh-CN" lang="zh-CN" rel="alternate">ä¸­æ–‡(ç®€)</a>
+ <a href="https://www.debian.org/download.zh-hk.html" title="Chinese (Hong Kong)" hreflang="zh-HK" lang="zh-HK" rel="alternate">ä¸­æ–‡(HK)</a>
+ <a href="https://www.debian.org/download.zh-tw.html" title="Chinese (Taiwan)" hreflang="zh-TW" lang="zh-TW" rel="alternate">ä¸­æ–‡(ç¹)</a>
+</div>
+How to set <a href="https://www.debian.org/intro/cn">the default document language</a>
+</div></div><!--/UdmComment-->
+<hr>
+<div id="footermap">
+<!--UdmComment-->
+<p><strong><a href="https://www.debian.org/">Home</a></strong></p>
+    <ul id="footermap-cola">
+		<li><a href="https://www.debian.org/intro/about">About</a>
+		  <ul>
+		  <li><a href="https://www.debian.org/social_contract">Social Contract</a></li>
+		  <li><a href="https://www.debian.org/code_of_conduct">Code of Conduct</a></li>
+		  <li><a href="https://www.debian.org/intro/free">Free Software</a></li>
+		  <li><a href="https://www.debian.org/partners/">Partners</a></li>
+		  <li><a href="https://www.debian.org/donations">Donations</a></li>
+          <li><a href="https://www.debian.org/legal">Legal Info</a></li>
+          <li><a href="https://www.debian.org/legal/privacy">Data Privacy</a></li>
+		  <li><a href="https://www.debian.org/contact">Contact Us</a></li>
+		  </ul>
+		</li>
+        <li><a href="https://www.debian.org/intro/help">Help Debian</a></li>
+    </ul>
+	<ul id="footermap-colb">
+			<li><a href="https://www.debian.org/distrib/">Getting Debian</a>
+			  <ul>
+			  <li><a href="https://www.debian.org/distrib/netinst">Network install</a></li>
+			  <li><a href="https://www.debian.org/CD/">CD/USB ISO images</a></li>
+			  <li><a href="https://www.debian.org/CD/vendors/">CD vendors</a></li>
+			  <li><a href="https://www.debian.org/distrib/pre-installed">Pre-installed</a></li>
+			  </ul>
+			</li>
+            <li><a href="https://www.debian.org/blends/">Pure Blends</a></li>
+			<li><a href="https://www.debian.org/distrib/packages">Debian Packages</a></li>
+			<li><a href="https://www.debian.org/devel/">Developers' Corner</a></li>
+	</ul>
+	<ul id="footermap-colc">
+		<li><a href="https://www.debian.org/News/">News</a>
+		  <ul>
+		  <li><a href="https://www.debian.org/News/weekly/">Project News</a></li>
+		  <li><a href="https://www.debian.org/events/">Events</a></li>
+		  </ul>
+		</li>
+    <li><a href="https://www.debian.org/doc/">Documentation</a>
+      <ul>
+      <li><a href="https://www.debian.org/releases/">Release Info</a></li>
+      <li><a href="https://www.debian.org/releases/stable/installmanual">Installation manual</a></li>
+      <li><a href="https://www.debian.org/doc/books">Debian Books</a></li>
+      <li><a href="https://wiki.debian.org/">Debian Wiki</a></li>
+      </ul>
+    </li>
+   </ul>
+   <ul id="footermap-cold">
+    <li><a href="https://www.debian.org/support">Support</a>
+	  <ul>
+			  <li><a href="https://www.debian.org/international/">Debian International</a></li>
+			  <li><a href="https://www.debian.org/security/">Security Information</a></li>
+			  <li><a href="https://www.debian.org/Bugs/">Bug reports</a></li>
+			  <li><a href="https://www.debian.org/MailingLists/">Mailing Lists</a></li>
+			  <li><a href="https://lists.debian.org/">Mailing List Archives</a></li>
+			  <li><a href="https://www.debian.org/ports/">Ports/Architectures</a></li>
+      </ul>
+    </li>
+</ul>
+<ul id="footermap-cole">
+  <li><a href="https://www.debian.org/sitemap">Site map</a></li>
+  <li><a href="https://search.debian.org/">Search</a></li>
+  <li><a href="https://bits.debian.org/">The Debian Blog</a></li>
+  <li><a href="https://micronews.debian.org/">Debian Micronews</a></li>
+  <li><a href="https://planet.debian.org/">Debian Planet</a></li>
+</ul>
+<!--/UdmComment-->
+</div> <!-- end footermap -->
+<div id="fineprint">
+  <p>See our <a href="https://www.debian.org/contact">contact page</a> to get in touch. Web site source code is <a href="https://salsa.debian.org/webmaster-team/webwml">available</a>.</p>
+<p>
+Last Modified: Sat, Jun 10 17:38:17 UTC 2023
+â€ƒ
+Last Built: Sat, Jun 10 22:21:52 UTC 2023
+  <br>
+  Copyright Â© 1997-2023
+ <a href="https://www.spi-inc.org/">SPI</a> and others; See <a href="https://www.debian.org/license" rel="copyright">license terms</a><br>
+  Debian is a registered <a href="https://www.debian.org/trademark">trademark</a> of Software in the Public Interest, Inc.
+</p>
+</div>
+</div> <!-- end footer -->
+
+
+</body></html>
+------MultipartBoundary--rKCYPeIa47275kefW82arMLdiyOZ3J0euPYZorWLaI----
+Content-Type: text/css
+Content-Transfer-Encoding: binary
+Content-Location: https://www.debian.org/debian.css
+
+@charset "utf-8";
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
+
+body { line-height: 1; color: rgb(0, 0, 0); background: rgb(255, 255, 255); }
+
+ol, ul { list-style: none; }
+
+table { border-collapse: separate; border-spacing: 0px; }
+
+blockquote, q { quotes: "" ""; }
+
+html { background-color: transparent; }
+
+:focus { outline: grey dotted 1px; }
+
+caption, th, td { text-align: left; font-weight: normal; }
+
+blockquote::before, blockquote::after, q::before, q::after { content: ""; }
+
+body { margin: 0px; font: 100% / 1.5 sans-serif; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); background-image: url("Pics/gradient.png"); background-position: 0px 0px; background-repeat: repeat-x; }
+
+#content { margin: 0px 10px 0px 52px; }
+
+#inner { position: relative; }
+
+#maincol { margin: 0px 15em 1.5em 0px; }
+
+#header { margin: 0px; padding: 0px 10px 0px 52px; }
+
+#header a:link, #header a:visited, #second-nav a:link, #second-nav a:visited { text-decoration: none; }
+
+#header a:hover, #second-nav a:hover { text-decoration: underline; }
+
+#breadcrumbs { margin: 0px; font-size: 0.75em; text-transform: lowercase; line-height: 2; background-color: rgb(245, 246, 247); border-bottom: 1px solid rgb(210, 211, 215); min-height: 20px; }
+
+#breadcrumbs::before { content: "/"; margin-left: 0.5em; margin-right: 0.5em; }
+
+p.section { margin: 0px; padding: 0px 5px; font-family: monospace; line-height: 16px; color: rgb(255, 255, 255); text-transform: uppercase; letter-spacing: 0.08em; position: absolute; top: 0px; left: 52px; background-color: rgb(199, 0, 54); }
+
+p.section a { color: rgb(255, 255, 255); text-decoration: none; }
+
+p.section a:hover { color: rgb(255, 255, 255); text-decoration: underline; }
+
+#navbar { background-color: transparent; list-style: none; display: block; border-bottom: 1px solid rgb(199, 0, 54); text-indent: 0px; padding: 0px; margin-top: 0px; margin-bottom: 0px; }
+
+#navbar ul { margin: 0px; padding: 0px; clear: both; overflow: hidden; min-height: 45px; }
+
+#navbar li { list-style: none; float: left; padding: 0px; margin: 0px; }
+
+#navbar a:link, #navbar a:visited { padding: 1.75em 0.5em 0.25em; border-left: 1px solid transparent; border-right: 1px solid transparent; display: block; text-decoration: none; }
+
+#navbar a:visited { color: rgb(84, 99, 140); }
+
+#navbar a:hover, #navbar a:visited:hover { background-color: rgb(245, 246, 247); border-left: 1px solid rgb(210, 211, 215); border-right: 1px solid rgb(210, 211, 215); text-decoration: underline; }
+
+#navbar-right { float: right; position: absolute; right: 370px; }
+
+ul.subnav { list-style: none; margin-left: 0px; padding-left: 0px; margin-top: 0px; }
+
+ul.subnav li { display: inline; margin-right: 1em; }
+
+#searchbox { text-align: left; line-height: 1; margin: 0px 10px 0px 0.5em; padding: 1px 0px; position: absolute; top: 0px; right: 0px; font-size: 0.75em; }
+
+#searchbox p { margin: 0px; padding: 0px; }
+
+#upperheader { margin: 0px; padding: 0px; }
+
+#logo { position: absolute; top: 0px; left: 0px; padding: 0px; background-color: transparent; border-width: 0px 1px 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent; border-image: initial; border-top-style: initial; border-top-color: initial; width: 50px; height: 5.07em; min-height: 65px; }
+
+#logo a { display: block; position: relative; padding: 0px; height: 100%; min-height: 65px; }
+
+#logo img { margin-top: 5px; position: absolute; bottom: 0.3em; overflow: auto; }
+
+#logo:hover { border-width: 0px 1px 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: rgb(210, 211, 215); border-bottom-color: rgb(210, 211, 215); border-left-color: rgb(210, 211, 215); border-image: initial; border-top-style: initial; border-top-color: initial; background-color: rgb(245, 246, 247); }
+
+a:link { color: rgb(0, 53, 199); text-decoration: underline; }
+
+a:visited { color: rgb(84, 99, 140); }
+
+a:link:hover { text-decoration: none; color: rgb(0, 32, 122); }
+
+a:visited:hover { text-decoration: none; }
+
+a:active { color: rgb(194, 195, 199); }
+
+a img { border: 0px; }
+
+a:link.rss_logo { font-size: 0.75em; float: right; line-height: 10px; color: rgb(255, 255, 255); background-color: rgb(255, 102, 0); font-weight: bold; font-family: sans-serif; text-align: center; text-decoration: none; padding: 0.25em; margin-left: 0.25em; border: 1px solid rgb(255, 102, 0); }
+
+a:link.rss_logo:hover { background-color: rgb(255, 255, 255); border: 1px solid rgb(255, 102, 0); color: rgb(255, 102, 0); }
+
+a.rss_logo.generic { background-color: rgb(255, 136, 0); }
+
+a.rss_logo.generic:hover { background-color: rgb(238, 119, 0); }
+
+a.rss_logo::after { content: none; }
+
+#second-nav { width: 16em; font-size: 0.75em; line-height: 1.5; float: right; top: 0px; right: 0px; margin: 3em 0px 0px; padding: 0px 0px 0px 1em; border-left: 1px solid rgb(210, 211, 215); }
+
+#second-nav ul { padding: 0px; margin: 0px; list-style: none; }
+
+#second-nav ul ul { margin-left: 1em; }
+
+#second-nav li { font-weight: normal; margin: 0px; padding: 0px; }
+
+#second-nav p { line-height: 2; font-weight: bold; margin: 0px; }
+
+#second-nav h2 { margin: 0px; }
+
+p { margin: 1.5em 0px; }
+
+strong { font-weight: bold; }
+
+em { font-style: italic; color: rgb(68, 68, 68); }
+
+small { font-size: 0.75em; }
+
+sup { font-size: 0.75em; vertical-align: top; }
+
+h1, h2, h3, h4, h5, h6 { font-weight: 600; color: rgb(0, 0, 0); }
+
+h1 { font-weight: normal; font-size: 1.8em; line-height: 0.83333; margin: 0.83333em 0px; }
+
+h2 { font-size: 1.4em; font-weight: normal; line-height: 1.07143; margin: 1.07143em 0px; }
+
+h3 { font-size: 1.125em; line-height: 1.333em; margin: 1.333em 0px 0px; }
+
+h4 { font-weight: normal; font-style: italic; margin: 1.5em 0px; color: rgb(68, 68, 68); }
+
+h5 { font-style: italic; font-size: 0.75em; margin: 2em 0px; }
+
+ol, ul { padding-left: 1.5em; margin: 1.5em 0px; }
+
+ol > ol, ul > ul, li > ol, li > ul { margin: 0px; }
+
+ol { list-style-type: decimal; }
+
+ul { list-style-type: disc; }
+
+th { font-weight: bold; margin: 1.5em 0px; }
+
+hr { border: none; background-color: rgb(187, 187, 187); height: 1px; margin: 1.4375em 0px 1.5em; }
+
+pre { margin: 1.5em 0px; overflow: auto; font-family: monospace; white-space: pre; color: rgb(0, 0, 0); }
+
+tt, kbd, code { font-family: monospace; color: rgb(0, 0, 0); }
+
+var { font-family: monospace; font-style: italic; color: rgb(0, 0, 0); }
+
+dt { margin: 1.5em 0px 0px; font-weight: bold; }
+
+dd { margin: 0px 0px 0px 1.5em; }
+
+blockquote { font-size: 0.75em; margin: 2em; line-height: 2; }
+
+cite { font-style: italic; color: rgb(68, 68, 68); }
+
+acronym, abbr { text-transform: uppercase; font-size: 0.9em; }
+
+.toc { font-size: 0.75em; list-style: none; border-bottom: 1px dotted grey; border-top-width: 1px; border-right-width: 1px; border-left-width: 1px; line-height: 1.833; padding: 0px; max-width: 62%; margin: 2em 0px; }
+
+.toc li { border-top: 1px dotted grey; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; padding: 0.0833em 0px; }
+
+.toc a { display: block; text-decoration: none; }
+
+.toc a:hover { display: block; background-color: rgb(240, 240, 244); text-decoration: underline; }
+
+.toc dt { margin: 0px; border-top: 1px dotted grey; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; padding: 0.0833em 0px; }
+
+.card { clear: both; margin: 1.5em 0px; background-position: 0px -50px; background-repeat: repeat-x; padding: 0px; }
+
+.card ul { }
+
+.card ul li { list-style: none; }
+
+.card h2 { }
+
+.lefthalf { float: left; }
+
+.righthalf { margin-left: 50%; }
+
+.lefthalf ul { margin-top: 0px; }
+
+#footer { font-size: 0.75em; border-width: 1px 0px; border-top-style: solid; border-bottom-style: solid; border-top-color: rgb(223, 223, 224); border-bottom-color: rgb(223, 223, 224); border-image: initial; padding: 1em; background-color: rgb(245, 246, 247); margin: 0px 10px 0px 52px; line-height: 1.5em; border-left-style: initial; border-left-color: initial; border-right-style: initial; border-right-color: initial; clear: both; }
+
+#content #footer { margin-left: 0px; }
+
+#footer p { margin: 1em 0px; }
+
+#footer hr { border-top: 1px solid rgb(210, 211, 215); border-bottom: 1px solid rgb(255, 255, 255); height: 0px; }
+
+#footer .editbar li { display: inline; margin-right: 2em; }
+
+#footer .info { }
+
+#fineprint { margin-bottom: 1em; }
+
+#footermap { list-style: none; margin: 0px; padding: 0px; width: 100%; overflow: hidden; border: 0px; }
+
+ul#footermap-cola a, ul#footermap-colb a, ul#footermap-colc a, ul#footermap-cold a, ul#footermap-cole a { padding-left: 0px; }
+
+ul#footermap-cola, ul#footermap-colb, ul#footermap-colc, ul#footermap-cold, ul#footermap-cole { float: left; width: 19%; min-width: 11em; height: 15em; margin: 0px 1% 0px 0px; padding: 2em 0px 0px; list-style: none; }
+
+ul#footermap-cole { width: 18.9%; margin-right: 0px; }
+
+#footermap-wrap { padding: 2em; border-top: 1px solid rgb(255, 255, 255); }
+
+#footermap a { margin: 0px; }
+
+#footermap ul { list-style: none; padding: 0px; }
+
+#footermap li { text-indent: 0px; background-color: transparent; font-weight: bold; }
+
+#footermap li ul { margin: 0px; padding: 0px; }
+
+#footermap li li { margin: 0px; text-indent: 0px; padding: 0px; font-weight: normal; border: 0px; background-image: none; background-color: transparent; }
+
+#serverselect { }
+
+#serverselect input, #serverselect option, #serverselect select { }
+
+#serverselect ul { display: inline; margin-left: 2em; }
+
+#serverselect li { list-style: none; display: inline; padding: 0px 1em; margin: 0px; }
+
+#serverselect form p { margin: 0px; padding: 0px; line-height: 1; }
+
+.lcol50 { float: left; width: 49%; font-size: 0.75em; margin: 0px; padding: 0px 0.5em 0px 0px; }
+
+.lcol50 h2 { margin-top: 0px; }
+
+.rcol50 { margin: 0px 0px 0px 51%; padding: 0px; font-size: 0.75em; }
+
+#pageLang { position: relative; }
+
+form#pageLang { display: inline; }
+
+input:focus { background-color: rgb(255, 255, 203); }
+
+.hidecss { display: none; }
+
+.clear { clear: both; }
+
+#clear { clear: both; border: 0px; height: 1px; display: block; }
+
+.quicklist { list-style: none; font-size: 0.75em; margin: 2em 0px; padding: 0px; text-indent: 0px; line-height: 2em; }
+
+.quicklist li { display: inline; }
+
+.item p { margin: 0px; }
+
+.item h2, .item p, .item ul { margin-right: 10px; }
+
+.item h2, .item h3, .item h4, .item h5 { margin-top: 0px; }
+
+.line { padding: 0px; width: auto; overflow: hidden; }
+
+div.downloads { border-top: 0.17em solid rgb(51, 153, 0); margin: 1.33em 0px 0px; }
+
+.downloads ul.downlist { margin: 0px; }
+
+div.downloads .col50 { border-top: 0.15em solid rgb(51, 153, 0); }
+
+ul.downlist { padding-left: 30px; text-indent: 0px; background: url("Pics/emblem-downloads.png") 0px 0.15em no-repeat; min-height: 23px; }
+
+ul.quicklist.downlist { border-top: 0.17em solid rgb(51, 153, 0); padding-top: 0.25em; margin-top: 1.6em; }
+
+ul.downlist li { display: inline; }
+
+ul.downlist li::after { content: ", "; }
+
+ul.downlist li:last-child::after { content: ""; }
+
+ul.downlist li a { white-space: nowrap; }
+
+div.tip, div.important, div.warning, div.note, div.trans-note { padding: 0px 2em 0px 4em; margin: 1.85em 0px; background-repeat: no-repeat; background-position: 0.5em 0.5em; font-size: 0.75em; line-height: 2em; background-color: rgb(255, 255, 203); border: 0.15em solid rgb(204, 204, 163); }
+
+div.tip p, div.important p, div.warning p, div.note p, div.trans-note p { margin: 1em 0px; }
+
+div.tip { background-image: url("Pics/admon-tip.png"); }
+
+div.important { background-image: url("Pics/admon-important.png"); }
+
+div.warning { background-image: url("Pics/admon-warning.png"); }
+
+div.note, div.trans-note { background-image: url("Pics/admon-note.png"); }
+
+.col50, .cardleft, .cardright { width: 47.5%; float: left; padding-bottom: 1.5em; }
+
+.lastcol, .cardright { margin: auto auto auto 5%; width: 47.5%; float: left; padding-right: 0px; }
+
+.lastcol h2, .lastcol p, .lastcol ul { margin-right: 0px; }
+
+.cardleft h2 { margin-right: 1em; }
+
+.cardright div { margin-left: 1.5em; }
+
+.cardright h2 { margin-left: 1em; }
+
+.votemenu a { display: block; }
+
+table.vote td, table.vote th { padding-right: 1.5em; }
+
+#maincol.with-toolbox { margin-right: 14em; }
+
+div.tabular table, table.tabular, table.vendors { border-bottom: 0.15em solid rgb(102, 102, 102); border-top: 0.15em solid rgb(102, 102, 102); font-size: 0.75em; margin-bottom: 4em; margin-top: -0.169em; text-align: left; width: 80%; }
+
+table td { padding-right: 1.5em; padding-bottom: 0.5em; padding-top: 0.5em; line-height: 1.2em; border-top: 1px dotted grey; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; }
+
+div.tabular table tr, table.tabular tr, table.vendors tr { width: 100%; }
+
+table th { padding-right: 1.5em; padding-bottom: 0.5em; padding-top: 0.5em; line-height: 1.5em; }
+
+div.tabular table td, table.tabular td, table.vendors td { border-top: 1px dotted grey; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; }
+
+div.tabular table > td:first-child, table.tabular > td:first-child, table.vendors > td:first-child { background-image: none; }
+
+#pageLang p, #pageLang form { display: inline; }
+
+.inline a { float: left; margin-right: 1em; }
+
+#langSelector { }
+
+#langSelector:hover { }
+
+#langContainer { padding-top: 0.5em; }
+
+#langContainer a { margin-right: 1em; }
+
+#pageLang:hover #langContainer { display: block; }
+
+.partnerlogo { max-width: 200px; }
+
+.bidi { direction: rtl; text-align: right; }
+
+ul.nodecoration { list-style: none; padding: 0px; }
+
+.action-block-form { margin-left: 4em; }
+
+@media only screen and (max-width: 38em) {
+  div#header { margin: 0px 2px; padding: 0px; }
+  div#logo { position: relative; top: 0px; height: auto; margin: 0px; padding: 0px; min-height: 0px; }
+  div#logo a { height: 61px; }
+  div#logo a img { margin: 0px; padding: 0px; display: block; }
+  #upperheader p.section { left: 70px; top: 0px; }
+  div#searchbox { position: relative; margin: -31px 0px 0px 60px; float: right; bottom: 0px; padding: 0px; }
+  div#searchbox input[name="P"] { width: 200px; }
+  div#navbar { display: block; position: relative; clear: both; }
+  #navbar ul { min-height: 1.5em; display: block; }
+  #navbar li { display: inline; float: none; margin: 0px; padding: 0px; }
+  div#navbar a:link, div#navbar a:visited { display: inline; margin: 0px 1.5em 0px 0px; padding: 0.25em 0px; border: 0px; background-color: transparent; }
+  div#content { margin: 0px 2px; }
+  ul.toc { max-width: none; }
+  div#maincol { margin-right: 0px; }
+  div.tip, div.important, div.warning, div.note, div.trans-note { overflow: hidden; }
+  div.trans-note { position: relative; top: 0px; right: 0px; left: 0px; margin: 0px; background-image: none; padding: 0px 0px 0px 1em; }
+  div#second-nav { margin-left: 1em; width: auto; }
+  div#footer { margin-left: 10px; padding-left: 0px; padding-right: 0px; }
+}
+
+aside { float: right; width: 30%; margin: 0px 1.5%; padding-left: 10px; padding-right: 10px; font-style: italic; background-color: rgb(210, 211, 215); }
+
+aside.light { float: right; width: 20%; margin: 0px 1.5%; padding: 15px; text-align: center; background-color: rgb(255, 255, 255); }
+------MultipartBoundary--rKCYPeIa47275kefW82arMLdiyOZ3J0euPYZorWLaI----
+Content-Type: image/png
+Content-Transfer-Encoding: binary
+Content-Location: https://www.debian.org/Pics/gradient.png
+
+‰PNG
+
+   IHDR      C   Òçø¹   sRGB ®Îé   	pHYs  ÿ  ÿôŠ²‰   tIME×/'æäp   tEXtComment Kalle Soderman¢şj   bKGD ÿ ÿ ÿ ½§“   UIDATÓ]ÁÀ0Ã$ï¿_¯ß.BpIÓX‡m¸î'†ˆA³ÇXD›‹Ñ
+$ÊfÌ.ûöéÎuÇ$èd³X{N?sÓŞ:ôê^Ù~~ü1ˆM}»^V}‚¸J€    IEND®B`‚
+------MultipartBoundary--rKCYPeIa47275kefW82arMLdiyOZ3J0euPYZorWLaI----
+Content-Type: image/png
+Content-Transfer-Encoding: binary
+Content-Location: https://www.debian.org/Pics/admon-tip.png
+
+‰PNG
+
+   IHDR           szzô   bKGD ÿ ÿ ÿ ½§“   	pHYs     šœ   tIMEÖ38¥fƒ¢  IDATXÃÅ–[lT×†ÿµ÷ÙgnÏŒ_0cCp8£$&R,RUm¥U+«%´@EMU©ZE}©”¢¾´$ÊC%çÒ6¢J«m‘ riJœÛ¤Øåb<_æ>s®ûœİ‡<U´´¥£}Öÿ­_ÎşÏÕ3yà©§B‘
+¶2Ü¦ úàÉ&  ×rö=ëµjş6´¿yÇ¾¿çg{Áø¯ZW­×S]½‘¶ÖV„Ã:4Fğ=‹‹‹¸tñ¼qibÔVüÅ+/ızğ <£GÖPc²åK½ı[#Èä«ÈU¸ÒÈ‡Ğ€å‰0zR	Dğ÷ƒo™é+GËùàÀĞĞ3Î­òk·Œ&ì¡e«Ö?²áş/ş5gÂSy¬j¸gu#báÎ}Ë‘ªPuüÉLNIWñoo=öîW'Îğu êfü–¶ÿàéF[W>¹şÇBŸÎ˜èNiØ´6Š¶DÀ†„“œ“Ô9÷"!á·7…ÕBÙ²Î_É¹?|p:3¿²kÕšì¹³ï×°k×Oã¤‹7{Ú»º(±iM­:41rAA2"D€(/ŞPWæÊÕÙœ¡İÜ9súdÿÆ}ƒ££§¬ÿ¦ÃnÀt¶½¹scØöÚ“„–„$H¹Dä0N6'²ÁæKãdrFVX×ìxCÀ(›N¡lK»¯s˜élûMunê?ìlí\ÊU,¬lÓáÃ÷ˆ)—@A9D°9#‹1f2N,3ƒs2‚U‚:«^Î”Š}÷İ§é;ëß„¾×ÕãZ¦Š€  	E.ã°‘Ã‰9Ä”d €ï3RÊW°]ÏcDÅ ®…
+U›V4§š¡¼Õu(åE5¡ÁS6LÇs‚Bs‰àÈaŒlÆ`A O|WùT¨¸Á WŒÈ7]ºà¤|?Z7 1­e'“˜^¨ZñˆîÌ!‚Íˆ,²8#›sA*_ùYÓw¤´ƒ‘""® Ÿ1ªÖ½ˆøX¹”ESTw
+–‘-Ze 6lÎÈd&çdhGz³ó%ó¼%åÌš‰¦ ®U‚Œ™Ë›ÂZ®X¶Ó&ëğ<ó·×.–W67z\#çòb5¿ñ®D*¤Ï•­t±ìN-Vì‰¹¼9\1ÜqÁY6bÏ¥27ùh@h†®3ãm‰åŒT¥r_«û={jlİÚßi]ÑkoYæ˜®,´'BH%#-íMÁn®\<›ûv9ªÁ^"{K2í)”«Sl<ŸŠ7Ş­sÕyà¿—Ü/îqë;†€"×Ş:|ô¯¶å`WK<2<™7/;~µğ˜*-‹…»:Û’&ãÑÊƒkç"Íw¦šbk›¢úÆÛÒÛ988h|îŸÑ=?éé¡|sÇnC‰ÈäŠ¦€"Î3†éŒEBZ>à%C»xĞ/YÑ€ş£}û¥bñÉW^üÍŸo•ŸİàÕ—ÿØu­ï|÷ˆH6†™œuÕ6
+	FJ
+Îƒ˜k_¼8‘t=çÓ†€è7‹…òàíÄ—  äÓé¹ôµXXğT•™-gçÒIbL2]¹ï;ÚÔ5QáÄÚ®\™&yv)¹—ğòËûsRúÏ\›¡eÁÕ†S‰}ôá±¯]úç{Û.~rtçØøÉ'V¯ŒêJpb=§N}Ó>XJnm©‘íš{ÿòúßÛ³cUª%©/L8vñn¦€5İ+E¿è:UuğíÃ××zqğ¹Ù;ŞnßñøÁX¢ç±‡·lAOÏZ4F#à\# ›[À;oÆøøÄåùŒ¾îĞ¡ì;ê  ´6çÚ²Ù†¯ŞxãOÈ.”àJÍA>7åä/x‡MØKÍY@z¦Â?»€]»¾û€+=ä˜Ëd ”…ãY½vÕ““Õ3Ùóä³óz@G"Cª£]İ)œ8qcSp]÷õÿ ç´ïŞ{;00ğch\  GâÂ…«èííÅú.„Bâ[uå¬grwwóÓš¦„aL¡\6ALC¡X‚Àè¹05yÙ\ñR<îÿnfÆ”·ê†ë9Z-DÇºÆÆĞ^!O *Ì9ƒR>”bPŠg•2Ÿ9“ùåü|±üY“
+€¬îçq@¨EpzºdNNf‡;;{esswßîİ?×6mzÓÓe;®8rdäÕjÕµï¨¶Ä×ƒjPK ªÿ Bétzº££ã±±±ÖÑÑQ?ŸÏ?~üçy üšĞuTí_s£®% š¨^EDhoooö}Ÿg2™bMÀ`×BÖÂ`İl	ê¹	¯[ªÕœ»Ñ^ÜPåõJ¯»qËøoMJ<ålã†ˆ    IEND®B`‚
+------MultipartBoundary--rKCYPeIa47275kefW82arMLdiyOZ3J0euPYZorWLaI----
+Content-Type: text/css
+Content-Transfer-Encoding: binary
+Content-Location: https://www.debian.org/debian-en.css
+
+@charset "utf-8";
+
+html[lang|="en"] #serverselect { }
+
+html[lang|="en"] #maincol { }
+
+html[lang|="en"] #leftcol ul.cdmenu { width: 10em; }
+
+q { font-style: italic; }
+
+html[lang|="en"] q::before { content: "â€œ"; }
+
+html[lang|="en"] q::after { content: "â€"; }
+
+html[lang|="en"] q q::before { content: "â€˜"; }
+
+html[lang|="en"] q q::after { content: "â€™"; }
+------MultipartBoundary--rKCYPeIa47275kefW82arMLdiyOZ3J0euPYZorWLaI----
+Content-Type: image/png
+Content-Transfer-Encoding: binary
+Content-Location: https://www.debian.org/Pics/openlogo-50.png
+
+‰PNG
+
+   IHDR   2   =  ˜n
+ò   sRGB ®Îé   	pHYs  ~õ  ~õ$ÉeÚ   tIMEÛ´ÈOÇ   bKGD      ùC»  VIDAThŞíZ{OU¿vYví’L*¯XMGòÈfóLµÑƒ¡É£)&	[Ï”aFÔĞ‹”&2ÓQŞQC%&¯(ÏŠ2å‰hXµ¿>Ÿú\N·s{O1ÎÌgî¹ßó=÷{¾÷œ{Î÷|îqœ éK'ç[#_ÆO©,PÎVĞÃ|‚Y0Å‰&…Â1”ÖËùWÕÈ‡Ì‚ö~5ŞÕµ—ÔÓ&ìô‘/§ü2‘Mæ ï)ÿF8_CF~8pwÄE¥Tõ÷,Eca“ÈTtÖ«İ¦«ÛÜ“ÀJo…n ßTU(y.´n_ûÔ‘…Àà„ïÛDAº­²Lk%[xîGm}ûÂŒü¢b;ÂüOÙ¶
+Ó=íŞÀ&…!P¸9ÒWº/š~ø.ÚÌHØè]Zœ‚;[ŒÕu®E'Uå!sN]­ëBC1Ï¨ĞÎœËëÊo¡
+p§”˜êê[¹hô•Vhè›øÈãŒË÷´Àxà>:•×£ù`wF ÿ—E`HĞ
+ß ŸXä·×°H¼ø	¸Ê"_Àû´ F¶Zä5IîcÈ³ƒ‘öÇejÕ>åQê±ÎÔ·Ä´ÖEhì0Ğ.YÆ®NšgñH)€mŠŸ
+Œ‰56i`D	îôzø˜p]|ZåvÓI¸z”ÒıZ`´}XCÛÓÀ^…*…*›Uù:ÀQEÀüv–÷ÛBæ%À÷Àk*(§+§ğššûé~ŸRxÃ‡7HÎõâ qyò:ùaËZB¼tõá©zX‘®¸+ ^ä2 Ø­(Ö(Ø50£Î”¨iº§‘»è~!CÇ"1+%#ô:#¨ryUãS¾èÀ­×C¾ØÈö:E¶²Maêõf½ Tá¨±È¹úeZä#¡ Fj §-ò6ÜI„©Ç­bHŒœ²í³ÆÆ}c.OÇg5R8c‘7ÚÅ[u#ş-²@S`ğĞ,*Dû¥¦¼;=‹uÎª”õœSğr¢¤èµ•H´¡–úún¨f¤“e,¯n2WÂd.ÇeK	‰\Ç}c­=^â!jòésË¾;=^AÚZ#n
+<®8Ø$_·êZ˜	ŒæõX§ÀÕñ¸dg'Îª
+š™Võ–OğĞùÀ.€¤çpOC¦fº€yná+ŠÜ™Ö‰ªÁv7£b5å3SÌ’×‡C·pv&ïlW¡~mK¸÷|_ËÃ¡jˆ›yŒô5dª ‰¶·ë’Yà^¾‘Ê¹AÚpGLfm¤¶İİÊ—7Œô70])ö3¨'Y[mX±£ŒVTYm2ÔáúKrkİs õJÔ”CF©1ğ°øxxè£%»…8ÇÔÿÛöå`#ƒcëRä³¥ñâ8Ã<`!pÛùh<C»·|G"«G1õ+±¹»ÎÏH(»j4¢¿Ç0¯‹£5N´ôä=‰hüFäèZå·ŒÒÆug§%t]§‡ïå/‚úµDzi;Z1Ì&ÏubD<_”k`’Îß9-ÖáµÆæ´¢8Îp)–²ñ²µT÷%ãåD¶øÎJOĞ/ÌEi¯·Ñ+×Ç³7ª;DÔ4 ß˜”åöş×»Ë‹Ö‘køÇMó}É úõCÅ}G"Ğ+[ä›Ÿ5ÅgÅÓ‘jê‘ÓA6¢àŞç÷á3L[ùÔ«¤á;½÷í–>Ì522$€şåÀ½@àO`¬ßĞ÷Ôø]½å$2ÉÇíWá"ËBWxG³Şl`½z—”ãj`¨‰äÅ]0ö±1›,á9YÎùLbsgÚ_Ğ{bÑØtdg´İ™êúSG‡†]ğŒ…¿BMÍ#/‡8ï&M|tº(¸%meûk“4Ptxšs)]J§R¢cJÔM7y9ËpËS™›lG¶ˆ¨*îf%C·_GnJ–#lPX·<Q~l\3C§øÇÇÄæ1ñ#şTº]Åì‘Œë$~ÒÃG“ŠÜc~"á:È&ëğ'œKb”™—'
+²l?dÛ`—ÊfÈ·‰³ÌÈò%jTÃQ[ ü`ğŒóL™{|uªîGè§Ø&nt0È9wÜ"E6]jz@„;Æ“’ó:â®]ä‘¯‘#¬¼N:<¡Kò¶–ÈÆvæ¨üm£~¶óï¥”ÎĞISÏ‘cÍ÷Ê#Œ†Éç.W.F|Éş³ƒ§‚ùù&9Â!±[:¤½õ •Ñ#ùF}+rèº/!Æ€Î¹s&ì¸pè-SóĞR_?GHüŸR¡y
+­@2Û‘ÊÏ°M]¨ò>†¼«dtÿ¦Ñ#Ô›[ıçÜ‰>“áşJÉÚé¦ÖÀAc(lV(?X:ü‘°G²åùåUCw·†©}şépOl—ÖĞ¥ÎLÉö24;•ÏR¯m·¼ Q’=Sû*]Å“"Üºˆ    IEND®B`‚
+------MultipartBoundary--rKCYPeIa47275kefW82arMLdiyOZ3J0euPYZorWLaI------
