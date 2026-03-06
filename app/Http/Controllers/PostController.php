@@ -20,116 +20,83 @@ class PostController extends Controller
 {
 
     public function home(): View
-    {
-        // Latest post
-        $latestPost = Post::where('active', '=', 1)
-            ->whereDate('published_at', '<', Carbon::now())
-            ->orderBy('published_at', 'desc')
-            ->limit(1)
-            ->first();
-    
-        // Show the most popular 5 posts based on upvotes
-        $popularPosts = Post::query()
-            ->leftJoin('upvote_downvotes', 'posts.id', '=', 'upvote_downvotes.post_id')
-            ->select('posts.*', DB::raw('COUNT(upvote_downvotes.id) as upvote_count'))
-            ->where(function ($query) {
-                $query->whereNull('upvote_downvotes.is_upvote')
-                    ->orWhere('upvote_downvotes.is_upvote', '=', 1);
-            })
-            ->where('active', '=', 1)
-            ->whereDate('published_at', '<', Carbon::now())
-            ->orderByDesc('upvote_count')
-            ->groupBy([
-                'posts.id',
-                'posts.title',
-                'posts.slug',
-                'posts.thumbnail',
-                'posts.body',
-                'posts.active',
-                'posts.published_at',
-                'posts.user_id',
-                'posts.created_at',
-                'posts.updated_at',
-                'posts.meta_title',
-                'posts.meta_description',
-            ])
-            ->limit(5)
-            ->get();
-        $popularPosts = $popularPosts->shuffle();
-    
-        // If authorized - Show recommended posts based on user upvotes
-        $user = auth()->user();
-    
-        if ($user) {
-            $leftJoin = "(SELECT cp.category_id, cp.post_id FROM upvote_downvotes
-                        JOIN category_post cp ON upvote_downvotes.post_id = cp.post_id
-                        WHERE upvote_downvotes.is_upvote = 1 and upvote_downvotes.user_id = ?) as t";
-            $recommendedPosts = Post::query()
-                ->leftJoin('category_post as cp', 'posts.id', '=', 'cp.post_id')
-                ->leftJoin(DB::raw($leftJoin), function ($join) {
-                    $join->on('t.category_id', '=', 'cp.category_id')
-                        ->on('t.post_id', '<>', 'cp.post_id');
-                })
-                ->select('posts.*')
-                ->where('posts.id', '<>', DB::raw('t.post_id'))
-                ->setBindings([$user->id])
-                ->limit(3)
-                ->get();
-        } // Not authorized - Popular posts based on views
-        else {
-            $recommendedPosts = Post::query()
-                ->leftJoin('post_views', 'posts.id', '=', 'post_views.post_id')
-                ->select('posts.*', DB::raw('COUNT(post_views.id) as view_count'))
-                ->where('active', '=', 1)
-                ->whereDate('published_at', '<', Carbon::now())
-                ->orderBy('view_count')
-                ->groupBy([
-                    'posts.id',
-                    'posts.title',
-                    'posts.slug',
-                    'posts.thumbnail',
-                    'posts.body',
-                    'posts.active',
-                    'posts.published_at',
-                    'posts.user_id',
-                    'posts.created_at',
-                    'posts.updated_at',
-                    'posts.meta_title',
-                    'posts.meta_description',
-                ])
-                ->limit(3)
-                ->get();
-        }
-    
-        // Show recent categories with their latest posts
-   $categories = Category::with(['posts' => function ($query) {
-        $query->where('active', '=', 1)
-            ->whereDate('published_at', '<', Carbon::now())
-            ->orderBy('published_at', 'desc')
-            ->take(6);
-    }])
-    ->withCount('posts')
-    ->orderByDesc('posts_count')
-    ->take(10)
-    ->get();
+{
+    // Latest post
+    $latestPost = Post::where('active', 1)
+        ->whereDate('published_at', '<', now())
+        ->latest('published_at')
+        ->first();
 
-    
-    
-        $randomPosts = Post::query()
-            ->where('active', '=', 1)
-            ->whereDate('published_at', '<', Carbon::now())
-            ->inRandomOrder()
-            ->limit(6)
+    // Popular posts (upvote based)
+    $popularPosts = Post::withCount([
+        'upvoteDownvotes as upvote_count' => function ($q) {
+            $q->where('is_upvote', 1);
+        }
+    ])
+        ->where('active', 1)
+        ->whereDate('published_at', '<', now())
+        ->orderByDesc('upvote_count')
+        ->limit(5)
+        ->get()
+        ->shuffle();
+
+    // Recommended posts for logged-in user
+    $user = auth()->user();
+
+    if ($user) {
+        // Recommended posts based on similar category of posts the user upvoted
+        $recommendedPosts = Post::where('active', 1)
+            ->whereDate('published_at', '<', now())
+            ->whereHas('categories', function ($q) use ($user) {
+                $q->whereIn('categories.id', function ($sub) use ($user) {
+                    $sub->select('category_id')
+                        ->from('upvote_downvotes')
+                        ->join('category_post', 'upvote_downvotes.post_id', '=', 'category_post.post_id')
+                        ->where('upvote_downvotes.user_id', $user->id)
+                        ->where('upvote_downvotes.is_upvote', 1);
+                });
+            })
+            ->limit(3)
             ->get();
-    
-        return view('home', compact(
-            'latestPost',
-            'popularPosts',
-            'recommendedPosts',
-            'categories',
-            'randomPosts'
-        ));
     }
+
+    // Recommended posts for guests → top viewed posts
+    else {
+        $recommendedPosts = Post::withCount('views as view_count')
+            ->where('active', 1)
+            ->whereDate('published_at', '<', now())
+            ->orderByDesc('view_count')
+            ->limit(3)
+            ->get();
+    }
+
+    // Categories with latest 6 posts each
+    $categories = Category::with(['posts' => function ($q) {
+        $q->where('active', 1)
+            ->whereDate('published_at', '<', now())
+            ->latest('published_at')
+            ->limit(6);
+    }])
+        ->withCount('posts')
+        ->orderByDesc('posts_count')
+        ->limit(10)
+        ->get();
+
+    // Random posts
+    $randomPosts = Post::where('active', 1)
+        ->whereDate('published_at', '<', now())
+        ->inRandomOrder()
+        ->limit(6)
+        ->get();
+
+    return view('home', compact(
+        'latestPost',
+        'popularPosts',
+        'recommendedPosts',
+        'categories',
+        'randomPosts'
+    ));
+}
 
     public function show(Post $post, Request $request)
     {

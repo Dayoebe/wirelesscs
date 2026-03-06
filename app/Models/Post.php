@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
 
 class Post extends Model
@@ -56,4 +57,15 @@ class Post extends Model
             }
         );
     }
+
+    public function upvoteDownvotes()
+    {
+        return $this->hasMany(UpvoteDownvote::class, 'post_id');
+    }
+
+    public function views(): HasMany
+    {
+        return $this->hasMany(PostView::class, 'post_id');
+    }
+
 }
