@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Post;
+use App\Models\UpvoteDownvote as UpvoteDownvoteModel;
 use Livewire\Component;
 
 class UpvoteDownvote extends Component
@@ -16,25 +17,30 @@ class UpvoteDownvote extends Component
 
     public function render()
     {
-        $upvotes = \App\Models\UpvoteDownvote::where('post_id', '=', $this->post->id)
-            ->where('is_upvote', true)
-            ->count();
-
-        $downvotes = \App\Models\UpvoteDownvote::where('post_id', '=', $this->post->id)
-            ->where('is_upvote', false)
-            ->count();
+        $upvotes = 0;
+        $downvotes = 0;
 
         // The status whether current user has upvoted the post or not.
         // This will be null, true, or false
         // null means user has not done upvote or downvote
         $hasUpvote = null;
 
-        /** @var \App\Models\User $user */
-        $user = request()->user();
-        if ($user) {
-            $model = \App\Models\UpvoteDownvote::where('post_id', '=', $this->post->id)->where('user_id', '=', $user->id)->first();
-            if ($model) {
-                $hasUpvote = !!$model->is_upvote;
+        if (UpvoteDownvoteModel::isTableAvailable()) {
+            $upvotes = UpvoteDownvoteModel::where('post_id', '=', $this->post->id)
+                ->where('is_upvote', true)
+                ->count();
+
+            $downvotes = UpvoteDownvoteModel::where('post_id', '=', $this->post->id)
+                ->where('is_upvote', false)
+                ->count();
+
+            /** @var \App\Models\User $user */
+            $user = request()->user();
+            if ($user) {
+                $model = UpvoteDownvoteModel::where('post_id', '=', $this->post->id)->where('user_id', '=', $user->id)->first();
+                if ($model) {
+                    $hasUpvote = !!$model->is_upvote;
+                }
             }
         }
 
@@ -52,10 +58,14 @@ class UpvoteDownvote extends Component
             return $this->redirect(route('verification.notice'));
         }
 
-        $model = \App\Models\UpvoteDownvote::where('post_id', '=', $this->post->id)->where('user_id', '=', $user->id)->first();
+        if (!UpvoteDownvoteModel::isTableAvailable()) {
+            return;
+        }
+
+        $model = UpvoteDownvoteModel::where('post_id', '=', $this->post->id)->where('user_id', '=', $user->id)->first();
 
         if (!$model) {
-            \App\Models\UpvoteDownvote::create([
+            UpvoteDownvoteModel::create([
                 'is_upvote' => $upvote,
                 'post_id' => $this->post->id,
                 'user_id' => $user->id

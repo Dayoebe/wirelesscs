@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
             $latestPost = Post::query()
                 ->visible()
                 ->published()
-                ->orderBy('published_at', 'desc')
+                ->orderByPublishDate('desc')
                 ->limit(6)
                 ->get(['id', 'title']);
         } catch (\Throwable $e) {

@@ -12,6 +12,8 @@ return new class extends Migration
      */
     public function up(): void
     {
+        $this->fixMigrationsTableIdColumn();
+
         if (!Schema::hasColumn('posts', 'active')) {
             Schema::table('posts', function (Blueprint $table) {
                 $table->boolean('active')->default(true)->after('body');
@@ -23,6 +25,23 @@ return new class extends Migration
                 ]);
             }
         }
+    }
+
+    private function fixMigrationsTableIdColumn(): void
+    {
+        if (!Schema::hasTable('migrations') || !Schema::hasColumn('migrations', 'id')) {
+            return;
+        }
+
+        $primaryKey = DB::select("SHOW INDEX FROM `migrations` WHERE `Key_name` = 'PRIMARY'");
+        if (empty($primaryKey)) {
+            DB::statement('ALTER TABLE `migrations` ADD PRIMARY KEY (`id`)');
+        }
+
+        DB::statement('ALTER TABLE `migrations` MODIFY `id` INT UNSIGNED NOT NULL AUTO_INCREMENT');
+
+        $nextId = ((int) DB::table('migrations')->max('id')) + 1;
+        DB::statement("ALTER TABLE `migrations` AUTO_INCREMENT = {$nextId}");
     }
 
     /**

@@ -41,7 +41,7 @@ class Post extends Model
 
     public function getFormattedDate()
     {
-        return $this->published_at->format('F jS Y');
+        return optional($this->publishDate())->format('F jS Y');
     }
 
     public function getThumbnail()
@@ -79,9 +79,32 @@ class Post extends Model
 
     public function scopePublished(Builder $query): Builder
     {
-        $table = $query->getModel()->getTable();
+        $publishColumn = self::publishColumn();
+        if (!$publishColumn) {
+            return $query;
+        }
 
-        return $query->whereDate("{$table}.published_at", '<=', now());
+        return $query->whereDate(self::qualifiedColumn($query, $publishColumn), '<=', now());
+    }
+
+    public function scopeWherePublishDate(Builder $query, string $operator, $date): Builder
+    {
+        $publishColumn = self::publishColumn();
+        if (!$publishColumn) {
+            return $query;
+        }
+
+        return $query->whereDate(self::qualifiedColumn($query, $publishColumn), $operator, $date);
+    }
+
+    public function scopeOrderByPublishDate(Builder $query, string $direction = 'desc'): Builder
+    {
+        $publishColumn = self::publishColumn();
+        if ($publishColumn) {
+            return $query->orderBy(self::qualifiedColumn($query, $publishColumn), $direction);
+        }
+
+        return $query->orderBy(self::qualifiedColumn($query, 'id'), $direction);
     }
 
     public function isVisible(): bool
@@ -95,6 +118,28 @@ class Post extends Model
         }
 
         return true;
+    }
+
+    public function publishDate()
+    {
+        $publishColumn = self::publishColumn();
+        if (!$publishColumn) {
+            return $this->created_at;
+        }
+
+        return $this->{$publishColumn};
+    }
+
+    public function isPublished(): bool
+    {
+        $publishDate = $this->publishDate();
+
+        if (!$publishDate && self::hasColumn('published_at')) {
+            // If explicit publishing is enabled but date is missing, treat as not published.
+            return false;
+        }
+
+        return !$publishDate || $publishDate <= now();
     }
 
     public function upvoteDownvotes()
@@ -120,6 +165,24 @@ class Post extends Model
         }
 
         return self::$columnExistsCache[$column];
+    }
+
+    protected static function publishColumn(): ?string
+    {
+        if (self::hasColumn('published_at')) {
+            return 'published_at';
+        }
+
+        if (self::hasColumn('created_at')) {
+            return 'created_at';
+        }
+
+        return null;
+    }
+
+    protected static function qualifiedColumn(Builder $query, string $column): string
+    {
+        return $query->getModel()->getTable() . '.' . $column;
     }
 
 }

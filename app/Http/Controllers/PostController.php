@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\PostView;
+use App\Models\UpvoteDownvote;
 use Carbon\Carbon;
 use Facebook\Exceptions\FacebookResponseException;
 use Facebook\Exceptions\FacebookSDKException;
@@ -20,41 +21,55 @@ class PostController extends Controller
 
     public function home(): View
 {
+    $hasVoteTable = UpvoteDownvote::isTableAvailable();
+    $voteTable = UpvoteDownvote::tableName();
+    $hasViewTable = PostView::isTableAvailable();
+
     // Latest post
     $latestPost = Post::query()
         ->visible()
         ->published()
-        ->latest('published_at')
+        ->orderByPublishDate('desc')
         ->first();
 
     // Popular posts (upvote based)
-    $popularPosts = Post::withCount([
-        'upvoteDownvotes as upvote_count' => function ($q) {
-            $q->where('is_upvote', 1);
-        }
-    ])
-        ->visible()
-        ->published()
-        ->orderByDesc('upvote_count')
-        ->limit(5)
-        ->get()
-        ->shuffle();
+    if ($hasVoteTable) {
+        $popularPosts = Post::withCount([
+            'upvoteDownvotes as upvote_count' => function ($q) {
+                $q->where('is_upvote', 1);
+            }
+        ])
+            ->visible()
+            ->published()
+            ->orderByDesc('upvote_count')
+            ->limit(5)
+            ->get()
+            ->shuffle();
+    } else {
+        $popularPosts = Post::query()
+            ->visible()
+            ->published()
+            ->orderByPublishDate('desc')
+            ->limit(5)
+            ->get()
+            ->shuffle();
+    }
 
     // Recommended posts for logged-in user
     $user = auth()->user();
 
-    if ($user) {
+    if ($user && $hasVoteTable) {
         // Recommended posts based on similar category of posts the user upvoted
         $recommendedPosts = Post::query()
             ->visible()
             ->published()
-            ->whereHas('categories', function ($q) use ($user) {
-                $q->whereIn('categories.id', function ($sub) use ($user) {
+            ->whereHas('categories', function ($q) use ($user, $voteTable) {
+                $q->whereIn('categories.id', function ($sub) use ($user, $voteTable) {
                     $sub->select('category_id')
-                        ->from('upvote_downvotes')
-                        ->join('category_post', 'upvote_downvotes.post_id', '=', 'category_post.post_id')
-                        ->where('upvote_downvotes.user_id', $user->id)
-                        ->where('upvote_downvotes.is_upvote', 1);
+                        ->from($voteTable)
+                        ->join('category_post', "{$voteTable}.post_id", '=', 'category_post.post_id')
+                        ->where("{$voteTable}.user_id", $user->id)
+                        ->where("{$voteTable}.is_upvote", 1);
                 });
             })
             ->limit(3)
@@ -63,19 +78,28 @@ class PostController extends Controller
 
     // Recommended posts for guests → top viewed posts
     else {
-        $recommendedPosts = Post::withCount('views as view_count')
-            ->visible()
-            ->published()
-            ->orderByDesc('view_count')
-            ->limit(3)
-            ->get();
+        if ($hasViewTable) {
+            $recommendedPosts = Post::withCount('views as view_count')
+                ->visible()
+                ->published()
+                ->orderByDesc('view_count')
+                ->limit(3)
+                ->get();
+        } else {
+            $recommendedPosts = Post::query()
+                ->visible()
+                ->published()
+                ->orderByPublishDate('desc')
+                ->limit(3)
+                ->get();
+        }
     }
 
     // Categories with latest 6 posts each
     $categories = Category::with(['posts' => function ($q) {
         $q->visible()
             ->published()
-            ->latest('published_at')
+            ->orderByPublishDate('desc')
             ->limit(6);
     }])
         ->withCount('posts')
@@ -102,33 +126,37 @@ class PostController extends Controller
 
     public function show(Post $post, Request $request)
     {
-        if (!$post->isVisible() || $post->published_at > Carbon::now()) {
+        if (!$post->isVisible() || !$post->isPublished()) {
             throw new NotFoundHttpException();
         }
+
+        $publishDate = $post->publishDate() ?? Carbon::now();
 
         $next = Post::query()
             ->visible()
             ->published()
-            ->whereDate('published_at', '<', $post->published_at)
-            ->orderBy('published_at', 'desc')
+            ->wherePublishDate('<', $publishDate)
+            ->orderByPublishDate('desc')
             ->limit(1)
             ->first();
 
         $prev = Post::query()
             ->visible()
             ->published()
-            ->whereDate('published_at', '>', $post->published_at)
-            ->orderBy('published_at', 'asc')
+            ->wherePublishDate('>', $publishDate)
+            ->orderByPublishDate('asc')
             ->limit(1)
             ->first();
 
         $user = $request->user();
-        PostView::create([
-            'ip_address' => $request->ip(),
-            'user_agent' => $request->userAgent(),
-            'post_id' => $post->id,
-            'user_id' => $user?->id
-        ]);
+        if (PostView::isTableAvailable()) {
+            PostView::create([
+                'ip_address' => $request->ip(),
+                'user_agent' => $request->userAgent(),
+                'post_id' => $post->id,
+                'user_id' => $user?->id
+            ]);
+        }
 
         return view('post.view', compact('post', 'prev', 'next'));
     }
@@ -140,7 +168,7 @@ class PostController extends Controller
             ->where('category_post.category_id', '=', $category->id)
             ->visible()
             ->published()
-            ->orderBy('published_at', 'desc')
+            ->orderByPublishDate('desc')
             ->paginate(10);
 
         return view('post.index', compact('posts', 'category'));
@@ -153,7 +181,7 @@ class PostController extends Controller
         $posts = Post::query()
             ->visible()
             ->published()
-            ->orderBy('published_at', 'desc')
+            ->orderByPublishDate('desc')
             ->where(function ($query) use ($q) {
                 $query->where('title', 'like', "%$q%")
                     ->orWhere('body', 'like', "%$q%");

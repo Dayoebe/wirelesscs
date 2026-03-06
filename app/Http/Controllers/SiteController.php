@@ -10,47 +10,32 @@ class SiteController extends Controller
 {
     public function about(): View
     {
-        $widget = TextWidget::query()
-            ->where('key', '=', 'about-page')
-            ->where('active', '=', 1)
-            ->first();
+        $widget = TextWidget::findActiveByKey('about-page');
 
         return view('about', compact('widget'));
     }
     public function contact(): View
     {
-        $widget = TextWidget::query()
-            ->where('key', '=', 'contact-us')
-            ->where('active', '=', 1)
-            ->first();
+        $widget = TextWidget::findActiveByKey('contact-us');
 
         return view('contact', compact('widget'));
     }
     public function privacy(): View
     {
-        $widget = TextWidget::query()
-            ->where('key', '=', 'privacy-policy')
-            ->where('active', '=', 1)
-            ->first();
+        $widget = TextWidget::findActiveByKey('privacy-policy');
 
         return view('privacy', compact('widget'));
     }
     public function terms(): View
     {
-        $widget = TextWidget::query()
-            ->where('key', '=', 'terms-conditions')
-            ->where('active', '=', 1)
-            ->first();
+        $widget = TextWidget::findActiveByKey('terms-conditions');
 
         return view('terms', compact('widget'));
     }
 
     public function content(): View
     {
-        $widget = TextWidget::query()
-            ->where('key', '=', 'content-guideline')
-            ->where('active', '=', 1)
-            ->first();
+        $widget = TextWidget::findActiveByKey('content-guideline');
 
         return view('content', compact('widget'));
     }
@@ -83,6 +68,5 @@ class SiteController extends Controller
 
 
 }
-
 
 

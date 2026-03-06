@@ -14,6 +14,7 @@ use Filament\Tables;
 use Filament\Tables\Filters\Filter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 
 class PostResource extends Resource
@@ -26,30 +27,32 @@ class PostResource extends Resource
 
     public static function form(Form $form): Form
     {
+        $mainCardSchema = [
+            Forms\Components\TextInput::make('title')
+                ->required()
+                ->maxLength(2048)
+                ->reactive()
+                ->afterStateUpdated(function (Closure $set, $state) {
+                    $set('slug', Str::slug($state));
+                }),
+            Forms\Components\TextInput::make('slug')
+                ->required()
+                ->maxLength(2048),
+            Forms\Components\RichEditor::make('body')
+                ->required(),
+            Forms\Components\Toggle::make('active')
+                ->required(),
+        ];
+
+        if (self::hasPostsColumn('published_at')) {
+            $mainCardSchema[] = Forms\Components\DateTimePicker::make('published_at');
+        }
+
         return $form
-
-
-
-
             ->schema([
                 Forms\Components\Card::make()
-                    ->schema([
-                        Forms\Components\TextInput::make('title')
-                            ->required()
-                            ->maxLength(2048)
-                            ->reactive()
-                            ->afterStateUpdated(function (Closure $set, $state) {
-                                $set('slug', Str::slug($state));
-                            }),
-                        Forms\Components\TextInput::make('slug')
-                            ->required()
-                            ->maxLength(2048),
-                        Forms\Components\RichEditor::make('body')
-                            ->required(),
-                        Forms\Components\Toggle::make('active')
-                            ->required(),
-                        Forms\Components\DateTimePicker::make('published_at'),
-                    ])->columnSpan(8),
+                    ->schema($mainCardSchema)
+                    ->columnSpan(8),
 
                 Forms\Components\Card::make()
                     ->schema([
@@ -67,6 +70,15 @@ class PostResource extends Resource
 
     public static function table(Table $table): Table
     {
+        $publishedAtColumn = self::hasPostsColumn('published_at')
+            ? Tables\Columns\TextColumn::make('published_at')
+                ->sortable()
+                ->dateTime()
+            : Tables\Columns\TextColumn::make('created_at')
+                ->label('published')
+                ->sortable()
+                ->dateTime();
+
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('thumbnail'),
@@ -74,9 +86,7 @@ class PostResource extends Resource
                 Tables\Columns\IconColumn::make('active')
                     ->sortable()
                     ->boolean(),
-                Tables\Columns\TextColumn::make('published_at')
-                    ->sortable()
-                    ->dateTime(),
+                $publishedAtColumn,
                 Tables\Columns\TextColumn::make('updated_at')
                     ->sortable()
                     ->dateTime(),
@@ -125,5 +135,14 @@ class PostResource extends Resource
             'view' => Pages\ViewPost::route('/{record}'),
             'edit' => Pages\EditPost::route('/{record}/edit'),
         ];
+    }
+
+    protected static function hasPostsColumn(string $column): bool
+    {
+        try {
+            return Schema::hasColumn('posts', $column);
+        } catch (\Throwable $e) {
+            return false;
+        }
     }
 }

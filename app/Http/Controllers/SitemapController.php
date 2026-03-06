@@ -40,7 +40,7 @@ class SitemapController extends Controller
             $sitemap .= "\t</url>\n";
         }
         // Get the page widgets and add them to the sitemap
-        $widgets = TextWidget::all();
+        $widgets = TextWidget::isTableAvailable() ? TextWidget::all() : collect();
         foreach ($widgets as $widget) {
             $url = URL::to('/' . $widget->slug);
             $lastmod = $widget->updated_at->tz('UTC')->toAtomString(); // Assuming you have an 'updated_at' column in your 'posts' table
