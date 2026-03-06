@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Models\Post;
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -27,8 +26,8 @@ class Category extends Model
     public function publishedPosts(): BelongsToMany
 {
     return $this->belongsToMany(Post::class)
-        ->where('active', '=', 1)
-        ->whereDate('published_at', '<', Carbon::now());
+        ->visible()
+        ->published();
 }
 
 }

@@ -9,7 +9,6 @@ use Carbon\Carbon;
 use Facebook\Exceptions\FacebookResponseException;
 use Facebook\Exceptions\FacebookSDKException;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
 use Illuminate\View\View;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -22,8 +21,9 @@ class PostController extends Controller
     public function home(): View
 {
     // Latest post
-    $latestPost = Post::where('active', 1)
-        ->whereDate('published_at', '<', now())
+    $latestPost = Post::query()
+        ->visible()
+        ->published()
         ->latest('published_at')
         ->first();
 
@@ -33,8 +33,8 @@ class PostController extends Controller
             $q->where('is_upvote', 1);
         }
     ])
-        ->where('active', 1)
-        ->whereDate('published_at', '<', now())
+        ->visible()
+        ->published()
         ->orderByDesc('upvote_count')
         ->limit(5)
         ->get()
@@ -45,8 +45,9 @@ class PostController extends Controller
 
     if ($user) {
         // Recommended posts based on similar category of posts the user upvoted
-        $recommendedPosts = Post::where('active', 1)
-            ->whereDate('published_at', '<', now())
+        $recommendedPosts = Post::query()
+            ->visible()
+            ->published()
             ->whereHas('categories', function ($q) use ($user) {
                 $q->whereIn('categories.id', function ($sub) use ($user) {
                     $sub->select('category_id')
@@ -63,8 +64,8 @@ class PostController extends Controller
     // Recommended posts for guests → top viewed posts
     else {
         $recommendedPosts = Post::withCount('views as view_count')
-            ->where('active', 1)
-            ->whereDate('published_at', '<', now())
+            ->visible()
+            ->published()
             ->orderByDesc('view_count')
             ->limit(3)
             ->get();
@@ -72,8 +73,8 @@ class PostController extends Controller
 
     // Categories with latest 6 posts each
     $categories = Category::with(['posts' => function ($q) {
-        $q->where('active', 1)
-            ->whereDate('published_at', '<', now())
+        $q->visible()
+            ->published()
             ->latest('published_at')
             ->limit(6);
     }])
@@ -83,8 +84,9 @@ class PostController extends Controller
         ->get();
 
     // Random posts
-    $randomPosts = Post::where('active', 1)
-        ->whereDate('published_at', '<', now())
+    $randomPosts = Post::query()
+        ->visible()
+        ->published()
         ->inRandomOrder()
         ->limit(6)
         ->get();
@@ -100,21 +102,21 @@ class PostController extends Controller
 
     public function show(Post $post, Request $request)
     {
-        if (!$post->active || $post->published_at > Carbon::now()) {
+        if (!$post->isVisible() || $post->published_at > Carbon::now()) {
             throw new NotFoundHttpException();
         }
 
         $next = Post::query()
-            ->where('active', true)
-            ->whereDate('published_at', '<=', Carbon::now())
+            ->visible()
+            ->published()
             ->whereDate('published_at', '<', $post->published_at)
             ->orderBy('published_at', 'desc')
             ->limit(1)
             ->first();
 
         $prev = Post::query()
-            ->where('active', true)
-            ->whereDate('published_at', '<=', Carbon::now())
+            ->visible()
+            ->published()
             ->whereDate('published_at', '>', $post->published_at)
             ->orderBy('published_at', 'asc')
             ->limit(1)
@@ -136,8 +138,8 @@ class PostController extends Controller
         $posts = Post::query()
             ->join('category_post', 'posts.id', '=', 'category_post.post_id')
             ->where('category_post.category_id', '=', $category->id)
-            ->where('active', '=', true)
-            ->whereDate('published_at', '<=', Carbon::now())
+            ->visible()
+            ->published()
             ->orderBy('published_at', 'desc')
             ->paginate(10);
 
@@ -149,8 +151,8 @@ class PostController extends Controller
         $q = $request->get('q');
 
         $posts = Post::query()
-            ->where('active', '=', true)
-            ->whereDate('published_at', '<=', Carbon::now())
+            ->visible()
+            ->published()
             ->orderBy('published_at', 'desc')
             ->where(function ($query) use ($q) {
                 $query->where('title', 'like', "%$q%")

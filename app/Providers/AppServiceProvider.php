@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\Models\Post;
-use Carbon\Carbon;
 use Filament\Facades\Filament;
 use Filament\Navigation\NavigationItem;
 use Illuminate\Support\Facades\View;
@@ -24,8 +23,9 @@ class AppServiceProvider extends ServiceProvider
 
         try {
             // Latest post
-            $latestPost = Post::where('active', '=', 1)
-                ->whereDate('published_at', '<', Carbon::now())
+            $latestPost = Post::query()
+                ->visible()
+                ->published()
                 ->orderBy('published_at', 'desc')
                 ->limit(6)
                 ->get(['id', 'title']);
