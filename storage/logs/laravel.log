@@ -1,4 +1,0 @@
-[2026-03-06 12:54:44] production.ERROR: Trait "Spatie\Permission\Traits\HasRoles" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"Spatie\\Permission\\Traits\\HasRoles\" not found at /opt/lampp/htdocs/wireless/app/Models/User.php:14)
-[stacktrace]
-#0 {main}
-"} 

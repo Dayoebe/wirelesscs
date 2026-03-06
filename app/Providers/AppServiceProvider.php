@@ -8,17 +8,30 @@ use Filament\Facades\Filament;
 use Filament\Navigation\NavigationItem;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 
 class AppServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        // Latest post
-        $latestPost = Post::where('active', '=', 1)
-            ->whereDate('published_at', '<', Carbon::now())
-            ->orderBy('published_at', 'desc')
-            ->limit(6)
-            ->get(['id', 'title']);
+        // Explicitly register legacy Http\Livewire components for Livewire v3.
+        Livewire::component('upvote-downvote', \App\Http\Livewire\UpvoteDownvote::class);
+        Livewire::component('comments', \App\Http\Livewire\Comments::class);
+        Livewire::component('comment-item', \App\Http\Livewire\CommentItem::class);
+        Livewire::component('comment-create', \App\Http\Livewire\CommentCreate::class);
+
+        $latestPost = collect();
+
+        try {
+            // Latest post
+            $latestPost = Post::where('active', '=', 1)
+                ->whereDate('published_at', '<', Carbon::now())
+                ->orderBy('published_at', 'desc')
+                ->limit(6)
+                ->get(['id', 'title']);
+        } catch (\Throwable $e) {
+            $latestPost = collect();
+        }
             
         // Share latest post data to all views
         View::share('latestPost', $latestPost);

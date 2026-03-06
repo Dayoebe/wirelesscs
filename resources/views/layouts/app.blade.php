@@ -3,7 +3,13 @@
 <head>
   @yield('meta')
 
-  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+  <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+  <link rel="apple-touch-icon" href="{{ asset('icon-192.png') }}">
+  <link rel="manifest" href="{{ asset('manifest.webmanifest') }}">
+  <meta name="theme-color" content="#2563eb">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -326,7 +332,7 @@
         @csrf
         <div class="mb-4">
             <label for="email" class="hover:uppercase hover:text-blue-600 block text-gray-400 font-bold mb-2">Email address</label>
-            <input type="email" name="email" id="email" value="{{ old('email') }}" class="form-input rounded-md text-gray-800 shadow-sm block w-full @error('email') border-red-500 @enderror">
+            <input type="email" name="email" id="email" value="{{ old('email') }}" class="form-input rounded-md text-gray-800 shadow-sm block w-full {{ (isset($errors) && $errors->has('email')) ? 'border-red-500' : '' }}">
 
             @if(session('success'))
                 <div class="alert alert-success">
@@ -351,7 +357,7 @@
 
     <form id="unsubscribe-form" action="{{ route('unsubscribe') }}" method="POST" style="display: none;">
         @csrf
-        <input type="email" name="email" id="unsubscribe-email" value="{{ old('email') }}" class="form-input rounded-md text-gray-800 shadow-sm block w-full @error('email') border-red-500 @enderror">
+        <input type="email" name="email" id="unsubscribe-email" value="{{ old('email') }}" class="form-input rounded-md text-gray-800 shadow-sm block w-full {{ (isset($errors) && $errors->has('email')) ? 'border-red-500' : '' }}">
         <button type="submit">Unsubscribe</button>
     </form>
 
